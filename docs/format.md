@@ -46,7 +46,7 @@ Encode a name (a base32 string) to a number.
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
-| name | <code>string</code> |  | A string to encode, up to 12 characters long. |
+| name | <code>string</code> |  | A string to encode, up to 13 characters long. |
 | [littleEndian] | <code>string</code> | <code>true</code> | Little or Bigendian encoding |
 
 <a name="decodeName"></a>

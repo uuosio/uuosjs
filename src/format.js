@@ -69,7 +69,7 @@ const charidx = ch => {
 
   @see types.hpp string_to_name
 
-  @arg {string} name - A string to encode, up to 12 characters long.
+  @arg {string} name - A string to encode, up to 13 characters long.
   @arg {string} [littleEndian = true] - Little or Bigendian encoding
 
   @return {string<uint64>} - compressed string (from name arg).  A string is
@@ -79,8 +79,8 @@ function encodeName(name, littleEndian = true) {
   if(typeof name !== 'string')
     throw new TypeError('name parameter is a required string')
 
-  if(name.length > 12)
-    throw new TypeError('A name can be up to 12 characters long')
+  if(name.length > 13)
+    throw new TypeError('A name can be up to 13 characters long')
 
   let bitstr = ''
   for(let i = 0; i <= 12; i++) { // process all 64 bits (even if name is short)
@@ -314,7 +314,7 @@ function parseAsset(str) {
     assert(symbol.length <= 7, `Asset symbol is 7 characters or less`)
   }
   if(contract != null) {
-    assert(contract.length <= 12, `Contract is 12 characters or less`)
+    assert(contract.length <= 13, `Contract is 13 characters or less`)
   }
 
   return {amount, precision, symbol, contract}
